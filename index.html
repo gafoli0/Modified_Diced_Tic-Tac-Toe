@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header el">
+      <h1>
+        <span class="part1">Modified Diced</span>
+        <span class="part2">Tic-Tac-Toe</span>
+      </h1>
+    </header>
+
+    <button class="instruction">Instruction</button>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h2>Instruction</h2>
+      <p class="insp">
+        Start the game by rolling the Dice. Each times a player rolls a 1, the
+        players plays his tic-tac-toe!
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
+    <div class="board" id="board">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
+
+    <div class="winning-message" id="winningMessage">
+      <div data-winning-message-text></div>
+    </div>
+    <section class="player player--0 player--active">
+      <h2 class="name" id="name--0">X</h2>
+    </section>
+
+    <section class="player player--1">
+      <h2 class="name" id="name--1">O</h2>
+    </section>
+
+    <div class="imgnbutton">
+      <img src="img/dice-1.png" alt="Dice" class="dice" />
+      <button class="btn btn--new">🔄 New Game</button>
+      <button class="btn btn--roll">🎲 Roll Dice</button>
+      <button class="btn btn--hold">📥 Restart</button>
+    </div>
+
+    <div class="winning-message">
+      <p><span></span></p>
+    </div>
+  </body>
+</html>
