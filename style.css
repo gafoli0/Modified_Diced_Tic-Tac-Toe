@@ -16,7 +16,7 @@ body {
     font-family: 'Creepster', cursive;
     margin: 0;
     background-color: black;
-    color: white
+    color: white;
 }
 
 header {
@@ -147,14 +147,32 @@ h1 {
 
 .cell.x::before,
 .cell.x::after {
-    background-color: skyblue;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem skyblue,
+        0 0 0.8rem skyblue,
+        0 0 2.8rem skyblue,
+        inset 0 0 1.3rem skyblue;
 }
 
 
 .cell.o::before {
-    background-color: plum;
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem plum,
+        0 0 0.8rem plum,
+        0 0 2.8rem plum,
+        inset 0 0 1.3rem plum;
 }
 
+.cell.o::after {
+    box-shadow: 0 0 .2rem #fff,
+        0 0 .2rem #fff,
+        0 0 2rem black,
+        0 0 0.8rem black,
+        0 0 2.8rem black,
+        inset 0 0 1.3rem black;
+}
 
 .board.x .cell:not(.x):not(.o):hover::before,
 .board.x .cell:not(.x):not(.o):hover::after,
@@ -198,7 +216,6 @@ h1 {
     height: var(--mark-size);
 }
 
-.cell.o::after,
 .board.o .cell:not(.x):not(.o):hover::after {
     width: calc(var(--mark-size)*0.75);
     height: calc(var(--mark-size)*0.75);
@@ -218,14 +235,7 @@ h1 {
     color: white;
     font-size: 5rem;
     flex-direction: column;
-}
-
-.winning-message button {
-    font-size: 3rem;
-    background-color: white;
-    border: 1px solid black;
-    padding: .25rem .5rem;
-    cursor: pointer;
+    z-index: 12;
 }
 
 .winning-message button:hover {
@@ -332,17 +342,19 @@ h1 {
 
 .btn--new {
     left: 8rem;
+    z-index: 48;
 }
 
 .btn--roll {
     bottom: 3rem;
 }
 
-.btn--roll:hover {
+.btn--roll:hover,
+.btn--new:hover {
     box-shadow: 0 3px 5px rgb(151, 109, 151);
 }
 
-.btn--hold {
+.btn--new {
     left: 80rem;
     bottom: 12.15rem;
 
@@ -350,16 +362,22 @@ h1 {
 
 .btn:active {
     transform: translate(-50%, 3px);
-    box-shadow: 0 3rem 5rem rgb(151, 109, 151);
+    box-shadow: 0 6px 5px skyblue;
+
 }
 
+.luck {
+    position: absolute;
+    left: 1rem;
+}
 
 .dice {
     position: absolute;
     left: 50%;
-    top: 30rem;
+    top: 32rem;
     transform: translate(-50%);
     height: 10rem;
+    filter: invert(110%);
     box-shadow: 0 3px 5rem rgb(151, 109, 151);
 }
 
@@ -388,7 +406,6 @@ h1 {
     position: absolute;
     left: 5rem;
     color: skyblue;
-
 }
 
 .player--1 {
@@ -417,6 +434,17 @@ h1 {
     opacity: 1;
 }
 
+.image {
+    position: absolute;
+    filter: contrast(0%);
+    left: 1px;
+}
+
 .hidden {
     display: none;
+}
+
+.shadow {
+    box-shadow: 2px 8px 0.5rem white;
+    left: 50%;
 }
