@@ -36,7 +36,6 @@ btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
-  console.log(e.key, typeof e.key);
   if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
 });
 
@@ -87,7 +86,6 @@ function checkWin(currentClass) {
 }
 
 function handleClick(e) {
-  console.log("clicked!");
   const cell = e.target;
   const currentClass = circleTurn ? circleClass : xClass;
   //   cell.classList.add(currentClass);
