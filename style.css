@@ -546,7 +546,6 @@ h1 {
         top: 37rem;
         transform: translate(-50%);
         height: 10rem;
-        filter: invert(110%);
         box-shadow: 0 3px 5rem rgb(151, 109, 151);
     }
 
