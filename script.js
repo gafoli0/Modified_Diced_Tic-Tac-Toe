@@ -6,7 +6,6 @@ const player1El = document.querySelector(".player--1");
 const diceEl = document.querySelector(".dice");
 const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
-const btnHold = document.querySelector(".btn--hold");
 
 let activePlayer, playing;
 let circleTurn;
@@ -98,7 +97,21 @@ function handleClick(e) {
       circleTurn ? "O " : "X "
     } wins!`;
     document.querySelector(".winning-message").classList.add("show");
+    btnNew.classList.add("shadow");
+  } else {
+    if (checkDraw()) {
+      document.querySelector(".winning-message").innerText = "Draw!";
+      document.querySelector(".winning-message").classList.add("show");
+    }
   }
+}
+
+function checkDraw() {
+  return [...cellElement].every((cell) => {
+    return (
+      cell.classList.contains(xClass) || cell.classList.contains(circleClass)
+    );
+  });
 }
 
 btnRoll.addEventListener("click", function () {
@@ -122,3 +135,17 @@ btnRoll.addEventListener("click", function () {
     }
   }
 });
+
+function newGame() {
+  init();
+  cellElement.forEach((cell) => {
+    cell.classList.remove(xClass);
+    cell.classList.remove(circleClass);
+    cell.removeEventListener("click", handleClick);
+  });
+
+  document.querySelector(".winning-message").classList.remove("show");
+  btnNew.classList.remove("shadow");
+}
+
+btnNew.addEventListener("click", newGame);
