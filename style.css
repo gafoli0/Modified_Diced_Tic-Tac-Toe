@@ -341,9 +341,10 @@ h1 {
 }
 
 .btn--new {
-    left: 8rem;
+    left: 80rem;
     z-index: 48;
 }
+
 
 .btn--roll {
     bottom: 3rem;
@@ -354,11 +355,6 @@ h1 {
     box-shadow: 0 3px 5px rgb(151, 109, 151);
 }
 
-.btn--new {
-    left: 80rem;
-    bottom: 12.15rem;
-
-}
 
 .btn:active {
     transform: translate(-50%, 3px);
@@ -447,4 +443,116 @@ h1 {
 .shadow {
     box-shadow: 2px 8px 0.5rem white;
     left: 50%;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        background-image: radial-gradient(whitesmoke, firebrick);
+        width: 410px;
+    }
+
+    .cell {
+        top: 1px;
+        width: 80px;
+        height: 80px;
+        border: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .name {
+        position: relative;
+        font-size: 8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+
+    .player--0 {
+        position: absolute;
+        left: 1rem;
+        bottom: 26rem;
+        color: skyblue;
+    }
+
+    .player--1 {
+        position: absolute;
+        right: 1rem;
+        bottom: 26rem;
+        color: plum;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .dice {
+        position: absolute;
+        left: 50%;
+        top: 37rem;
+        transform: translate(-50%);
+        height: 10rem;
+        filter: invert(110%);
+        box-shadow: 0 3px 5rem rgb(151, 109, 151);
+    }
+
+    .btn--new {
+        left: 13rem;
+        bottom: 12px;
+        z-index: 48;
+    }
+
+    .btn--roll {
+        bottom: 6rem;
+    }
+
+    .luck {
+        bottom: 20rem;
+        left: 7.5rem;
+    }
+
+    .modal {
+        padding: 0;
+    }
+
+    .instruction {
+        position: absolute;
+        right: 8px;
+        color: #444;
+        background: none;
+        border: none;
+        font-family: inherit;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 400;
+        transition: all 0.2s;
+        background-color: white;
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 0.7rem 2.5rem;
+        border-radius: 50rem;
+    }
+
+    .insp {
+        position: absolute;
+        left: 0rem;
+        margin: 0;
+    }
+
+    .close-modal {
+        margin: 0;
+        position: absolute;
+        top: 0rem;
+        right: 2rem;
+        font-size: 4rem;
+        color: pointer;
+        border: none;
+        background: none;
+        color: white
+    }
 }
