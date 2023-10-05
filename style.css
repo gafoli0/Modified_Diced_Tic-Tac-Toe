@@ -446,11 +446,17 @@ h1 {
 }
 
 @media screen and (max-width: 500px) {
+    :root {
+        --cell-size: 80px;
+        --mark-size: calc(var(--cell-size)*0.9)
+    }
+
     body {
         background: rgb(238, 174, 202);
         background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 188, 233, 1) 100%);
         width: 410px;
     }
+
 
     .cell {
         top: 1px;
@@ -463,6 +469,48 @@ h1 {
         position: relative;
         cursor: pointer;
     }
+
+    .cell.x::before,
+    .cell.x::after,
+    .board.x .cell:not(.x):not(.o):hover::before,
+    .board.x .cell:not(.x):not(.o):hover::after {
+        content: '';
+        position: absolute;
+        width: calc(var(--mark-size) * 0.15);
+        height: var(--mark-size);
+    }
+
+    .cell.x::before,
+    .board.x .cell:not(.x):not(.o):hover::before {
+        transform: rotate(45deg);
+    }
+
+    .cell.x::after,
+    .board.x .cell:not(.x):not(.o):hover::after {
+        transform: rotate(-45deg);
+    }
+
+    .cell.o::before,
+    .cell.o::after,
+    .board.o .cell:not(.x):not(.o):hover::before,
+    .board.o .cell:not(.x):not(.o):hover::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .cell.o::before,
+    .board.o .cell:not(.x):not(.o):hover::before {
+        width: var(--mark-size);
+        height: var(--mark-size);
+    }
+
+    .board.o .cell:not(.x):not(.o):hover::after {
+        width: calc(var(--mark-size)*0.75);
+        height: calc(var(--mark-size)*0.75);
+        background-color: black;
+    }
+
 
     .name {
         position: relative;
