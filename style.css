@@ -447,7 +447,8 @@ h1 {
 
 @media screen and (max-width: 500px) {
     body {
-        background-image: radial-gradient(whitesmoke, firebrick);
+        background: rgb(238, 174, 202);
+        background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 188, 233, 1) 100%);
         width: 410px;
     }
 
@@ -521,6 +522,7 @@ h1 {
     }
 
     .instruction {
+        top: 12rem;
         position: absolute;
         right: 8px;
         color: #444;
@@ -553,6 +555,8 @@ h1 {
         color: pointer;
         border: none;
         background: none;
-        color: white
+        color: white;
+        color: #dda0dd;
+        color: #87ceeb;
     }
 }
